@@ -21,7 +21,7 @@ const Phases = ({memonic}) => {
   const [toggle, settoggle] = useState(false);
   return (
     <div className="w-full flex justify-center my-3">
-      <div className="w-full max-w-4xl rounded-2xl overflow-hidden bg-[#2E2B2B] border-2 border-black">
+      <div className="w-full h-full  max-w-4xl rounded-2xl overflow-hidden bg-[#2E2B2B] border-2 border-black">
         <div className="w-full h-20 bg-black flex justify-between items-center px-4 md:px-10">
           <h2 className="font-orbitron font-bold text-white text-xl md:text-2xl">
             Your Secret Phases
