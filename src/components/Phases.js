@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import icon from "../assets/icon.png";
 import Image from "next/image";
+import { toast } from "sonner";
 const PhaseText = ({memonic}) => {
+  const handleCopy=(text)=>{
+    navigator.clipboard.writeText(text);
+    toast.success("Copied to clipboard")
+  }
   return (
-    <div className="h-full w-full grid grid-cols-2 md:grid-cols-4 gap-2 p-4 md:p-10">
+    <div className="group h-full w-full grid grid-cols-2 md:grid-cols-4 gap-2 p-4 md:p-10 cursor-pointer" onClick={()=>{handleCopy(memonic)}}>
         {
             memonic.split(" ").map((word,index)=>{
-                return <div key={index} className="bg-black h-10 text-white rounded-2xl flex justify-center items-center">{word}</div>
+                return <div key={index} className="bg-black h-10 text-white rounded-2xl flex justify-center items-center group-hover:text-blue-400 transition-colors">{word}</div>
             })
         }
     </div>
